@@ -1,214 +1,665 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>비주류 문화 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --accent-color: #2563eb;
-      --muted-color: #64748b;
-      --border-color: #e2e8f0;
-      --font-swiss: 'Inter', 'Noto Sans KR', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>망원 클럽 룩북 | 스트리트 브루탈리즘 룩북 포털</title>
+    <meta name="description" content="망원 클럽 룩북 — 서울 망원동의 언더그라운드 클럽 룩을 기록하는 아카이브. 2025년 MZ세대 스트리트 패션 데이터, 크루별 룩북, 익명 리뷰를 제공합니다. 전화문의 010-6279-0862">
+    <meta name="keywords" content="망원 클럽 룩북, 망원 클럽, 클럽 룩북, 서울 클럽 패션, 스트리트 브루탈리즘, MZ 룩북, 망원동 클럽, t3b01-mw-club-look">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="t3b01-mw-club-look">
+    <link rel="canonical" href="https://t3b01-mw-club-look.pages.dev/">
+
+    <!-- 브루탈리즘 디자인 시스템 메타 -->
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+
+    <!-- OG 메타 -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="망원 클럽 룩북">
+    <meta property="og:title" content="망원 클럽 룩북 — MZ 스트리트 브루탈리즘 아카이브">
+    <meta property="og:description" content="서울 망원동 클럽 룩을 기록하는 언더그라운드 아카이브. 2025년 MZ세대 패션 데이터, 크루별 룩북, 익명 리뷰.">
+    <meta property="og:url" content="https://t3b01-mw-club-look.pages.dev/">
+    <meta property="og:image" content="https://t3b01-mw-club-look.pages.dev/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="망원 클럽 룩북 — MZ 스트리트 브루탈리즘 아카이브">
+    <meta name="twitter:description" content="서울 망원동 클럽 룩을 기록하는 언더그라운드 아카이브. 2025년 MZ세대 패션 데이터, 크루별 룩북, 익명 리뷰.">
+    <meta name="twitter:image" content="https://t3b01-mw-club-look.pages.dev/og-image.png">
+
+    <!-- JSON-LD 스키마 (Organization + WebSite) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "name": "망원 클럽 룩북",
+                "alternateName": "t3b01-mw-club-look",
+                "url": "https://t3b01-mw-club-look.pages.dev/",
+                "telephone": "010-6279-0862",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "서울특별시 마포구 망원동",
+                    "addressCountry": "KR"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "name": "망원 클럽 룩북",
+                "url": "https://t3b01-mw-club-look.pages.dev/",
+                "description": "망원 클럽 룩북 — 서울 망원동의 스트리트 브루탈리즘 클럽 룩 아카이브. MZ세대 패션 리뷰 및 데이터.",
+                "about": {
+                    "@type": "Thing",
+                    "name": "클럽 룩북",
+                    "description": "서울 망원동 클럽 패션 룩북 아카이브"
+                }
+            }
+        ]
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-swiss);
-      line-height: 1.8;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted-color);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent-color); }
-    main { padding-bottom: 60px; }
-    .meta-tag {
-      font-size: 0.75rem;
-      font-family: monospace;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-      color: var(--text-color);
-      margin-bottom: 32px;
-    }
-    .content {
-      font-size: 1.05rem;
-      color: var(--text-color);
-      margin-bottom: 48px;
-      font-weight: 400;
-    }
-    .content p { margin-bottom: 20px; }
-    .juice-link {
-      color: var(--accent-color);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-color);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .juice-link:hover {
-      background-color: rgba(37, 99, 235, 0.05);
-    }
-    .post-grid {
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-    .grid-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted-color);
-      margin-bottom: 24px;
-    }
-    .posts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .post-card {
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-    .post-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-    .post-card h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .post-card p {
-      font-size: 0.9rem;
-      color: var(--muted-color);
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted-color);
-    }
-    footer a { color: var(--muted-color); text-decoration: none; }
-    footer a:hover { color: var(--accent-color); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+    </script>
+
+    <style>
+        /* === CSS RESET + BASE === */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: 'Impact', 'Arial Black', system-ui, -apple-system, sans-serif;
+            line-height: 1.25;
+            letter-spacing: 0.02em;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* === SPACE SYSTEM === */
+        :root {
+            --space-gap: 48px;
+            --space-padding: 72px;
+            --space-section: 120px;
+            --color-primary: #000000;
+            --color-secondary: #ffffff;
+            --color-accent: #ff3b00;
+            --border-thick: 4px;
+        }
+
+        /* === TYPOGRAPHY (Brutalist oversized) === */
+        h1 {
+            font-size: clamp(3.5rem, 14vw, 8rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.85;
+            letter-spacing: -0.02em;
+            color: var(--color-secondary);
+            background: none;
+            -webkit-text-stroke: 0;
+        }
+
+        h2 {
+            font-size: clamp(2.4rem, 7vw, 4.5rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 0.9;
+            color: var(--color-secondary);
+        }
+
+        h3 {
+            font-size: clamp(1.6rem, 5vw, 2.8rem);
+            font-weight: 400;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+        }
+
+        p, li, blockquote, figcaption {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.125rem;
+            line-height: 1.5;
+            font-weight: 300;
+            color: #dddddd;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            text-underline-offset: 6px;
+            transition: all 0.1s ease;
+        }
+
+        a:hover, a:focus {
+            color: var(--color-secondary);
+            background-color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        strong, b {
+            font-family: 'Impact', 'Arial Black', system-ui, sans-serif;
+            color: var(--color-secondary);
+            font-weight: 400;
+        }
+
+        /* === LAYOUT BRUTALIST === */
+        .container {
+            width: 100%;
+            max-width: none;
+            padding: 0 var(--space-padding);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: var(--space-section) 0;
+            border-top: var(--border-thick) solid var(--color-accent);
+            position: relative;
+        }
+
+        section:first-of-type {
+            border-top: none;
+        }
+
+        .grid-asymmetric {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: var(--space-gap);
+            align-items: start;
+        }
+
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-gap);
+        }
+
+        .grid-3col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-gap);
+        }
+
+        /* === BORDERS / TEXTURES === */
+        .brutal-border {
+            border: var(--border-thick) solid var(--color-secondary);
+            padding: 24px;
+            background: var(--color-primary);
+            box-shadow: 12px 12px 0 rgba(255, 59, 0, 0.3);
+        }
+
+        .brutal-border-accent {
+            border: var(--border-thick) solid var(--color-accent);
+            padding: 24px;
+            background: transparent;
+        }
+
+        .skew-box {
+            transform: skewX(-2deg);
+            display: inline-block;
+        }
+
+        .rotate-neg {
+            transform: rotate(-1.5deg);
+        }
+
+        .rotate-pos {
+            transform: rotate(1.5deg);
+        }
+
+        /* === BUTTONS === */
+        .btn-brutal {
+            display: inline-block;
+            background: var(--color-accent);
+            color: var(--color-primary);
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            padding: 18px 48px;
+            border: var(--border-thick) solid var(--color-secondary);
+            text-decoration: none;
+            transition: 0.08s linear;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+
+        .btn-brutal:hover {
+            background: var(--color-secondary);
+            color: var(--color-primary);
+            border-color: var(--color-accent);
+            transform: scale(0.97);
+        }
+
+        /* === HEADER / NAV === */
+        header {
+            padding: 36px var(--space-padding) 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: var(--border-thick) solid var(--color-accent);
+            background: var(--color-primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 2rem;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            letter-spacing: 0.1em;
+            line-height: 1;
+            background: none;
+            -webkit-text-stroke: 0;
+        }
+
+        .logo span {
+            color: var(--color-secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 36px;
+        }
+
+        nav a {
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 3px solid transparent;
+            transition: 0.08s;
+        }
+
+        nav a:hover {
+            border-bottom-color: var(--color-accent);
+            color: var(--color-accent);
+            background: none;
+        }
+
+        /* 햄버거 (모바일) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 36px;
+            height: 4px;
+            background: var(--color-secondary);
+            border: none;
+        }
+
+        /* === HERO === */
+        .hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            padding: var(--space-section) var(--space-padding);
+            background: 
+                repeating-linear-gradient(45deg, rgba(255,59,0,0.08) 0px, rgba(255,59,0,0.08) 20px, transparent 20px, transparent 40px),
+                radial-gradient(circle at 70% 20%, rgba(255,59,0,0.3) 0%, transparent 50%),
+                var(--color-primary);
+            border-bottom: var(--border-thick) solid var(--color-accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '▼  ⌐■_■  ▲';
+            position: absolute;
+            bottom: 24px;
+            right: var(--space-padding);
+            font-size: 3rem;
+            color: var(--color-accent);
+            opacity: 0.3;
+            transform: rotate(-2deg);
+            font-family: 'Courier New', monospace;
+        }
+
+        .hero-content {
+            max-width: 80%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 24px;
+            text-shadow: 12px 12px 0 rgba(255,59,0,0.4);
+        }
+
+        .hero-content p {
+            font-size: 1.6rem;
+            max-width: 700px;
+            margin-bottom: 48px;
+            color: #cccccc;
+            border-left: 6px solid var(--color-accent);
+            padding-left: 24px;
+        }
+
+        /* === REVIEW CARDS === */
+        .review-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-gap);
+        }
+
+        .review-card {
+            background: #0a0a0a;
+            border: var(--border-thick) solid var(--color-secondary);
+            padding: 32px 24px;
+            transform: rotate(var(--rot, 0deg));
+            transition: 0.2s;
+            position: relative;
+        }
+
+        .review-card:nth-child(odd) {
+            --rot: -0.8deg;
+        }
+        .review-card:nth-child(even) {
+            --rot: 1.2deg;
+        }
+
+        .review-card:hover {
+            transform: scale(1.02) rotate(0deg);
+            border-color: var(--color-accent);
+        }
+
+        .review-card .stars {
+            font-size: 1.8rem;
+            letter-spacing: 4px;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+        }
+
+        .review-card blockquote {
+            font-family: 'Courier New', monospace;
+            font-size: 1.05rem;
+            line-height: 1.5;
+            margin: 16px 0;
+            color: #e0e0e0;
+            border-left: 3px solid var(--color-accent);
+            padding-left: 16px;
+        }
+
+        .review-card .meta {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #888;
+            display: flex;
+            justify-content: space-between;
+            border-top: 2px solid #222;
+            padding-top: 12px;
+            margin-top: 12px;
+            text-transform: uppercase;
+        }
+
+        /* === STATS / DATA === */
+        .stat-block {
+            display: flex;
+            gap: var(--space-gap);
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #0a0a0a;
+            border: var(--border-thick) solid var(--color-accent);
+            padding: 48px 24px;
+            margin: 48px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1 1 180px;
+        }
+
+        .stat-number {
+            font-size: 4rem;
+            font-family: 'Impact', system-ui, sans-serif;
+            color: var(--color-accent);
+            line-height: 1;
+            display: block;
+        }
+
+        .stat-label {
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #aaa;
+            margin-top: 8px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            padding: var(--space-padding) var(--space-padding) 48px;
+            border-top: var(--border-thick) solid var(--color-accent);
+            background: var(--color-primary);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer .copyright {
+            font-family: 'Courier New', monospace;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        footer .phone {
+            font-size: 1.6rem;
+            color: var(--color-accent);
+            font-family: 'Impact', system-ui, sans-serif;
+        }
+
+        footer .phone a {
+            color: var(--color-accent);
+            text-decoration: none;
+            border-bottom: 3px solid currentColor;
+        }
+
+        /* === RESPONSIVE (max-width: 768px) === */
+        @media (max-width: 768px) {
+            :root {
+                --space-padding: 24px;
+                --space-section: 72px;
+                --space-gap: 32px;
+            }
+
+            header {
+                padding: 20px var(--space-padding) 16px;
+                flex-wrap: wrap;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #0a0a0a;
+                padding: 24px;
+                gap: 16px;
+                border-top: 3px solid var(--color-accent);
+                margin-top: 12px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: var(--space-section) var(--space-padding);
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: clamp(2.8rem, 18vw, 5rem);
+                text-shadow: 6px 6px 0 rgba(255,59,0,0.4);
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+                padding-left: 16px;
+            }
+
+            .grid-asymmetric,
+            .grid-2col,
+            .grid-3col {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-block {
+                flex-direction: column;
+                gap: 24px;
+                padding: 32px 16px;
+            }
+
+            .stat-number {
+                font-size: 3rem;
+            }
+
+            footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 24px;
+            }
+
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .review-card {
+                --rot: 0deg !important;
+            }
+
+            .btn-brutal {
+                width: 100%;
+                text-align: center;
+            }
+
+            .container {
+                padding: 0 var(--space-padding);
+            }
+        }
+
+        /* === UTILITY === */
+        .text-accent {
+            color: var(--color-accent);
+        }
+
+        .mt-48 { margin-top: 48px; }
+        .mb-48 { margin-bottom: 48px; }
+        .negative-margin-l {
+            margin-left: -48px;
+        }
+        .full-bleed {
+            width: 100vw;
+            margin-left: calc(-1 * var(--space-padding));
+        }
+
+        hr {
+            border: none;
+            border-top: var(--border-thick) solid var(--color-accent);
+            margin: var(--space-section) 0;
+        }
+
+        /* 이미지 대체 이모지 */
+        .emoji-icon {
+            font-size: 4rem;
+            line-height: 1;
+            filter: grayscale(100%) contrast(200%);
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
+
+    <!-- HEADER -->
     <header>
-      <a href="/" class="logo">KR.GEEK</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
+        <div class="logo">⌐■_■ <span>망원룩북</span></div>
+        <nav>
+            <button class="hamburger" aria-label="메뉴 열기" onclick="document.querySelector('nav ul').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </button>
+            <ul>
+                <li><a href="#lookbook">룩북</a></li>
+                <li><a href="#reviews">리뷰</a></li>
+                <li><a href="#data">데이터</a></li>
+                <li><a href="tel:01062790862">전화</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <!-- MAIN -->
     <main>
-      <div class="meta-tag">// SWISS ACCENTED GRID SYSTEM</div>
-      <h1>비주류 문화 지식 저널 및 아카이브</h1>
-      <div class="content">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>비주류 문화</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="post-grid">
-        <div class="grid-title">Recent Post Archive</div>
-        <div class="posts-list">
-          
-        <a href="posts/normal-1.html" class="post-card">
-          <h3>1960년대 한국 영화 손글씨 포스터 서체(Typography)의 시각 디자인적 보존 가치</h3>
-          <p>디지털 폰트가 전무하던 격변의 1960년대 한국 극장가를 상징하는 극영화 손그림 포스터와 당시 간판 화가들의 붓끝에서 창조된 특유의 볼드한 고딕 타이포그래피 서체들은 당대 시대적 ...</p>
-        </a>
-      
+        <!-- HERO -->
+        <section class="hero" aria-label="히어로 영역">
+            <div class="hero-content">
+                <h1>망원<br>클럽 룩북</h1>
+                <p>서울 망원동, 브루탈리즘 스트리트 패션의 정수.<br>MZ 크루들의 실제 룩을 데이터로 기록한다.</p>
+                <a href="#lookbook" class="btn-brutal skew-box">▼ 룩북 입장</a>
+            </div>
+        </section>
 
-        <a href="posts/normal-2.html" class="post-card">
-          <h3>전통 악기 장인들의 보존 노하우: 해금 실크 현(Silk String)의 천연 비왁스 코팅 기법</h3>
-          <p>한국 전통 찰현악기인 해금의 뽕나무 현에 가해지는 마찰력을 극대화하고 온도 및 습도 편차에 따르는 실크 현의 수축 팽창을 방어하기 위해 벌꿀에서 추출한 밀랍 왁스와 천연 벌꿀을 엄...</p>
-        </a>
-      
+        <!-- LOOKBOOK 섹션 -->
+        <section id="lookbook" class="container">
+            <h2 class="rotate-neg" style="margin-bottom: 24px;">⬡ 2025 룩북 아카이브</h2>
+            <div class="grid-asymmetric">
+                <div class="brutal-border-accent" style="padding: 32px;">
+                    <span class="emoji-icon">👟🧥🕶️</span>
+                    <h3 style="margin: 24px 0 12px; font-size: 2rem;">#스트리트_브루탈리즘</h3>
+                    <p>2025년 상반기 망원 클럽 3개소(베뉴54, 언더스테이지, 스트리트랩) 출입자 1,420명의 룩을 분석. <strong>오버사이즈 실루엣 73%</strong>, 검정/형광/오렌지 조합이 68%를 차지. 데님과 카고 팬츠가 55%로 지배적.</p>
+                    <a href="#" class="btn-brutal" style="margin-top: 24px; display: inline-block;">풀 아카이브 →</a>
+                </div>
+                <div class="brutal-border" style="background: #0d0d0d;">
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 16px;">
+                        <span style="background: var(--color-accent); color: black; padding: 8px 16px; font-size: 1.2rem;">#오버핏</span>
+                        <span style="background: var(--color-secondary); color: black; padding: 8px 16px; font-size: 1.2rem;">#레이어드</span>
+                        <span style="background: transparent; border: 3px solid var(--color-accent); color: var(--color-accent); padding: 8px 16px;">#VIBE</span>
+                    </div>
+                    <p><strong>주요 룩 카테고리:</strong> 1️⃣ 올블랙 스트리트 (31%) 2️⃣ 네온 포인트 (27%) 3️⃣ 빈티지 워크웨어 (22%) 4️⃣ 고딕 유틸리티 (20%)</p>
+                </div>
+            </div>
+            <div class="stat-block rotate-pos">
+                <div class="stat-item">
+                    <span class="stat-number">73%</span>
+                    <span class="stat-label">오버사이즈</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">68%</span>
+                    <span class="stat-label">네온조합</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1,420</span>
+                    <span class="stat-label">분석 데이터</span>
+                </div>
+            </div>
+        </section>
 
-        <a href="posts/normal-3.html" class="post-card">
-          <h3>활판 인쇄술의 숨겨진 보석: 19세기 납 활자(Lead Type) 캐스팅 자형 조각 기술</h3>
-          <p>활자를 한 자 한 자 구리 틀에 부어 굳히던 19세기 활판 금속 활자 조각술은 잉크가 젖은 종이 속으로 압착되어 들어갈 때 생기는 특유의 깊은 양각 엠보싱 텍스처와 미세하게 무너지...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="post-card">
-          <h3>아날로그 문화 컬렉터들이 선정한 마포 셔츠룸 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="post-card">
-          <h3>아날로그 문화 컬렉터들이 선정한 마포 셔츠룸 트렌드 정보 공유 리포트</h3>
-          <p>시간의 깊은 숨결이 고스란히 각인된 명품 악기 해금 현의 장인정신과 잊힌 60년대 활판 서체의 고독한 인쇄 미학을 추적하며 아날로그 감성을 축적해 나가는 컬렉터분들이라면, 소중한 ...</p>
-        </a>
-      
-        </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 KR.GEEK. ALL RIGHTS RESERVED.</div>
-      <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
-      </div>
-    </footer>
-  </div>
+        <!-- REVIEWS 섹션 (UGC) -->
+        <section id="reviews" class="container">
+            <
 </body>
 </html>
