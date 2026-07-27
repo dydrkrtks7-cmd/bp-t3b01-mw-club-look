@@ -1,184 +1,201 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-<title>정보 — 망원 클럽 룩북 | 망원동 클럽 패션 아카이브</title>
-<meta name="description" content="망원 클럽 룩북 아카이브 정보 — 2025년 망원동 클럽 문화 데이터 수집 방법론, 크루별 스트리트 브루탈리즘 패션 분석 기준, 익명 리뷰 정책. 서울 망원 클럽 패션 트렌드 연구 자료. 전화문의 010-6279-0862">
-<meta name="keywords" content="망원 클럽 룩북 정보, 망원 클럽 아카이브, 클럽 패션 데이터 수집, 스트리트 브루탈리즘 연구, 망원동 패션 분석, t3b01-mw-club-look-info">
-<meta name="robots" content="index, follow">
-<meta name="author" content="t3b01-mw-club-look">
-<link rel="canonical" href="https://t3b01-mw-club-look.pages.dev/info">
-<meta name="bpaas-design-system" content="brutalist-avantgarde">
-<meta name="bpaa-style" content="street-brutalist-v1">
-<meta name="viewport-fit" content="cover">
-
-<style>
-/* === CSS RESET + BASE === */
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { font-size: 16px; scroll-behavior: smooth; background: #0d0d0d; color: #f0f0f0; }
-body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.4; min-height: 100vh; overflow-x: hidden; color: #e0e0e0; background: #0d0d0d; }
-
-/* === SPACE SYSTEM === */
-:root { --space-unit: 8px; --space-xs: calc(var(--space-unit) * 1); --space-sm: calc(var(--space-unit) * 2); --space-md: calc(var(--space-unit) * 4); --space-lg: calc(var(--space-unit) * 6); --space-xl: calc(var(--space-unit) * 8); --space-2xl: calc(var(--space-unit) * 12); --max-width: 1200px; --border-thick: 4px; --border-thin: 2px; }
-
-/* === TYPOGRAPHY (Brutalist oversized) === */
-h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 0.85; letter-spacing: -0.04em; text-transform: uppercase; color: #f7931e; margin-bottom: var(--space-md); text-shadow: 6px 6px 0 #000; }
-h2 { font-size: clamp(2.2rem, 6vw, 3.6rem); font-weight: 800; line-height: 1; letter-spacing: -0.02em; text-transform: uppercase; border-left: var(--border-thick) solid #f7931e; padding-left: var(--space-sm); margin: var(--space-xl) 0 var(--space-md); color: #e0e0e0; }
-h3 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; line-height: 1.1; text-transform: uppercase; margin: var(--space-lg) 0 var(--space-sm); color: #f0f0f0; }
-p, li, blockquote, figcaption { font-size: clamp(1rem, 1.8vw, 1.2rem); line-height: 1.6; color: #b0b0b0; margin-bottom: var(--space-sm); }
-a { color: #f7931e; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; transition: all 0.15s; }
-a:hover, a:focus { color: #fff; background: #f7931e; text-decoration: none; padding: 0 4px; }
-strong, b { font-weight: 700; color: #f0f0f0; }
-
-/* === LAYOUT === */
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--space-md); }
-.site-header { border-bottom: var(--border-thick) solid #f7931e; padding: var(--space-md) 0; background: #0d0d0d; position: sticky; top: 0; z-index: 100; }
-.header-inner { display: flex; justify-content: space-between; align-items: center; }
-.site-brand { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900; text-transform: uppercase; letter-spacing: -0.03em; color: #f0f0f0; text-decoration: none; }
-.site-brand:hover { background: none; color: #f7931e; padding: 0; }
-
-/* === NAV === */
-nav { display: flex; gap: var(--space-md); align-items: center; }
-nav a { font-size: clamp(0.9rem, 1.6vw, 1.1rem); font-weight: 700; text-transform: uppercase; text-decoration: none; padding: var(--space-xs) var(--space-sm); border: var(--border-thin) solid transparent; }
-nav a:hover { border-color: #f7931e; background: transparent; color: #f7931e; padding: var(--space-xs) var(--space-sm); }
-nav a.active { border: var(--border-thick) solid #f7931e; color: #f7931e; background: transparent; }
-.hamburger { display: none; cursor: pointer; width: 32px; height: 20px; position: relative; }
-.hamburger span { display: block; width: 100%; height: 3px; background: #f0f0f0; position: absolute; left: 0; transition: all 0.3s; }
-.hamburger span:nth-child(1) { top: 0; }
-.hamburger span:nth-child(2) { top: 8px; }
-.hamburger span:nth-child(3) { top: 16px; }
-
-/* === CONTENT === */
-.page-section { padding: var(--space-2xl) 0; border-bottom: 1px solid #222; }
-.page-section:last-child { border-bottom: none; }
-.hero-block { background: #111; padding: var(--space-2xl) var(--space-md); border: var(--border-thick) solid #f7931e; margin-bottom: var(--space-xl); }
-.hero-block p { font-size: clamp(1.1rem, 2vw, 1.4rem); max-width: 800px; }
-.stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg); margin: var(--space-xl) 0; }
-.stat-card { background: #1a1a1a; padding: var(--space-lg); border: var(--border-thin) solid #333; text-align: center; }
-.stat-card .number { font-size: clamp(3rem, 6vw, 4.5rem); font-weight: 900; color: #f7931e; line-height: 1; margin-bottom: var(--space-xs); }
-.stat-card .label { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: #888; }
-
-/* === CARD === */
-.card-block { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-lg); margin: var(--space-xl) 0; }
-.info-card { background: #1a1a1a; padding: var(--space-lg); border-left: var(--border-thick) solid #f7931e; }
-.info-card h4 { font-size: clamp(1.2rem, 2.5vw, 1.8rem); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-sm); color: #f0f0f0; }
-.info-card p { font-size: 0.95rem; }
-.info-card ul { list-style: none; margin-top: var(--space-sm); }
-.info-card li { padding: var(--space-xs) 0; border-bottom: 1px solid #2a2a2a; font-size: 0.9rem; }
-.info-card li::before { content: '▸ '; color: #f7931e; font-weight: 700; }
-
-/* === FAQ === */
-.faq-list { margin: var(--space-xl) 0; }
-.faq-item { border-bottom: 1px solid #2a2a2a; padding: var(--space-md) 0; }
-.faq-question { font-weight: 700; font-size: clamp(1.1rem, 2vw, 1.4rem); color: #f0f0f0; cursor: default; margin-bottom: var(--space-xs); }
-.faq-answer { color: #999; font-size: 0.95rem; }
-
-/* === FOOTER === */
-.site-footer { background: #0a0a0a; border-top: var(--border-thick) solid #f7931e; padding: var(--space-xl) 0; margin-top: var(--space-2xl); }
-.footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--space-md); }
-.footer-links { display: flex; gap: var(--space-md); flex-wrap: wrap; }
-.footer-links a { font-size: 0.85rem; text-transform: uppercase; }
-.copyright { font-size: 0.75rem; color: #555; }
-
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
-  .hamburger { display: block; }
-  nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #0d0d0d; flex-direction: column; padding: var(--space-md); border-bottom: var(--border-thick) solid #f7931e; gap: var(--space-sm); }
-  nav.open { display: flex; }
-  .header-inner { position: relative; }
-  .stat-grid { grid-template-columns: 1fr 1fr; }
-  .card-block { grid-template-columns: 1fr; }
-  .hero-block { padding: var(--space-lg) var(--space-sm); }
-  .footer-inner { flex-direction: column; text-align: center; }
-}
-
-/* tel-link styling */
-a[href^="tel"] { font-weight: 700; letter-spacing: 0.05em; }
-a[href^="tel"]:hover { background: #f7931e; color: #000; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>망원 클럽 룩북 - 실무자를 위한 공간 정보 가이드</title>
+    <meta name="description" content="망원 클럽 룩북 정보를 바탕으로 대규모 행사나 모임을 준비하는 실무자가 반드시 확인해야 할 공간 선정 기준과 인원 변동 대응, 그리고 정산 프로세스를 안내합니다.">
+    <meta name="keywords" content="망원 클럽 룩북, 클럽 대관 준비, 망원동 모임 기획, 클럽 행사 실무 가이드">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-charcoal-silver">
+    <link rel="canonical" href="https://seoul-club-hot.namanavi.com/about.html">
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "망원 클럽 룩북",
+            "description": "망원동 소재 클럽 공간 대관 및 행사 기획 정보",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "망원동",
+                "addressLocality": "서울",
+                "addressRegion": "마포구"
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #2d2d2d;
+            --text-primary: #e0e0e0;
+            --text-secondary: #a0a0a0;
+            --accent-charcoal: #404040;
+            --accent-silver: #c0c0c0;
+            --border-subtle: #333333;
+            --font-display: 'Noto Sans KR', sans-serif;
+            --spacing-unit: 1rem;
+        }
+        body {
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-display);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .q-txt-1sor {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem var(--spacing-unit);
+        }
+        header {
+            padding: 3rem 0 2rem 0;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.75rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--accent-silver);
+            margin: 0 0 0.75rem 0;
+            line-height: 1.3;
+        }
+        .v-box-40gt {
+            background-color: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-subtle);
+        }
+        section {
+            margin-bottom: 3.5rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--accent-silver);
+            margin: 0 0 1.5rem 0;
+            letter-spacing: -0.01em;
+            border-left: 3px solid var(--accent-charcoal);
+            padding-left: 1rem;
+        }
+        .q-img-m2zu {
+            width: 100%;
+            height: auto;
+            background-color: var(--bg-secondary);
+            border-radius: 8px;
+            margin: 1.5rem 0;
+            display: block;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        .n-nav-cz5j {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-subtle);
+            border-bottom: 1px solid var(--border-subtle);
+            margin: 2rem 0;
+        }
+        .n-nav-cz5j a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        .n-nav-cz5j a:hover {
+            color: var(--accent-silver);
+        }
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+            .q-txt-1sor {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h1 {
+                line-height: 1.4;
+            }
+            .n-nav-cz5j {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            .v-box-2 {
+                padding: 1.25rem;
+            }
+            section {
+                margin-bottom: 2.5rem;
+            }
+        }
+    </style>
+  <meta property="og:url" content="https://seoul-club-hot.namanavi.com/about.html">
 </head>
 <body>
+    <div class="q-txt-1sor">
+        <header>
+            <h1>망원 클럽 룩북, 공간 정보 완전 정리</h1>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 0;">기획자와 실무자가 꼭 알아야 할 공간 특성, 인원 대응 전략, 그리고 정산 노하우까지</p>
+        </header>
 
-<!-- SITE HEADER -->
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="/" class="site-brand">MW CLUB LOOK</a>
-    <div class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')">
-      <span></span><span></span><span></span>
+        <nav class="n-nav-cz5j">
+            <a href="#space-overview">공간 개요</a>
+            <a href="#capacity">인원 대응</a>
+            <a href="#settlement">정산 프로세스</a>
+            <a href="#checklist">체크리스트</a>
+            <a href="#tips">실무자 팁</a>
+        </nav>
+
+        <section id="space-overview">
+            <h2>공간, 그 자체가 무드가 되는 이유</h2>
+            <p>망원 클럽 룩북의 공간은 단순히 넓은 평수나 화려한 인테리어로 승부하지 않아요. 오히려 절제된 레이아웃과 빛의 방향성에 더 신경을 썼죠. 천장 높이가 일반적인 클럽보다 40cm 정도 높게 설계되어 있어서, 입장하는 순간부터 개방감이 확 올라오는 게 느껴질 거예요. 특히 메인 홀은 기둥이 전혀 없는 오픈 구조라서, 어떤 테이블 배치를 하든 시야가 가려지지 않는답니다.</p>
+            <p>음향 장비도 정말 공들였어요. 단순히 스피커 출력만 높은 게 아니라, 공간 전체에 소리가 균일하게 퍼지도록 음향 엔지니어가 직접 3차원 시뮬레이션을 돌려서 스피커 각도를 조정했어요. 이 말은 즉, 앞쪽에 있는 사람이 귀가 아플 때 뒤쪽에서는 소리가 약하게 들리는 전형적인 클럽 문제가 여기서는 거의 발생하지 않는다는 거예요. 실무자 입장에서는 사운드 체크 시간을 크게 단축할 수 있어서, 행사 전날 밤까지 불안에 떨 필요가 없답니다.</p>
+            <div class="v-box-2">
+                <p style="margin: 0; color: var(--accent-silver);"><strong>실무자 노트:</strong> 공간 섭외 전에 반드시 현장 방문해서 천장 높이와 기둥 유무를 확인하세요. 사진만 보고 판단하면 실제 개방감과 전혀 다를 수 있어요.</p>
+            </div>
+        </section>
+
+        <section id="capacity">
+            <h2>인원 변동, 당황하지 말고 이렇게 대응하세요</h2>
+            <p>가장 많이 받는 질문이 "몇 명까지 가능할까요?"예요. 결론부터 말하면, 망원 클럽 룩북은 기본 80명에서 최대 150명까지 수용 가능해요. 그런데 이 숫자가 함정이에요. 80명이라고 해서 무조건 쾌적한 건 아니에요. 행사 성격에 따라 체감 밀도가 완전히 달라지죠. 예를 들어 네트워킹 파티처럼 사람들이 자주 움직이는 이벤트라면 80명도 꽤 빽빽하게 느껴질 수 있어요. 반면 공연 위주로 관객이 한 방향을 집중하는 경우라면 120명도 전혀 불편하지 않아요.</p>
+<p>진짜 문제는 갑작스러운 인원 변동이에요. 행사 당일 아침에 "죄송한데 20명 더 올 것 같아요"라는 연락을 받았을 때, 이미 셋업을 다 마친 상태라면 정말 난감하조. 그래서 저희는 항상 20% 버퍼 플랜을 권장해요. 기본 인원보다 20% 더 많은 인원이 와도 대응할 수 있도록 테이블 배치와 케이터링 수량을 미리 조정해 두는 거예요. 이 추가 비용이 부담된다면, 초대 명단을 조금 더 타이트하게 관리하거나 RSVP 마감을 이틀 일찍 당기는 식으로 리스크를 줄이세요.</p>
+            <p>또 하나 간과하기 쉬운 게 탈의실이에요. 겨울철 행사라면 참가자들이 두꺼운 외투를 맡길 공간이 반드시 필요해요. 망원 클럽 룩북에는 메인 홀 바로 옆에 별도 코트룸이 준비되어 있어서, 최대 150벌까지 수용 가능해요. 만약 이걸 미리 확인하지 않으면, 행사장 구석에 외투가 쌓여서 분위기가 산만해지는 최악의 상황이 올 수도 있어요.</p>
+        </section>
+
+        <section id="settlement">
+            <h2>정산, 복잡하게 생각하지 마세요</h2>
+            <p>돈 계산은 언제나 예민한 부분이죠. 망원 클럽 룩북은 실무자들이 스트레스를 덜 받도록 정산 프로세스를 최대한 단순하게 만들었어요. 대관료는 선결제 50%, 행사 종료 후 7일 이내 잔금 50%로 나눠요. 이렇게 하면 행사 전에 전체 금액을 부담할 필요가 없어서 캐시플로우 관리가 훨씬 수월해요. 특히 티켓 판매로 자금을 회수하는 이벤트라면 이 구조가 정말로 도움이 됩니다.</p>
+<p>추가 비용이 발생할 수 있는 항목으로는 음향 조명 장비 추가 대여, 청소 서비스, 그리고 연장 사용이 있어요. 연장 사용은 시간당 요금이 적용되는데, 미리 계약서에 명시된 종료 시간을 넘기면 자동으로 1시간 단위로 과금돼요. 그래서 행사 런타임을 짤 때, 이 시간을 반드시 고려해야 해요. 설상가상으로 술자리가 늘어나서 연장이 발생하는 경우가 많으니, 애초에 30분 정도 여유를 두고 계약하는 게 속 편해요.</p>
+            <div class="v-box-2">
+                <p style="margin: 0; color: var(--accent-silver);"><strong>정산할 때 꼭 확인하세요:</strong> 계약서에 명시된 보증금 환불 조건을 다시 한 번 읽어보세요. 공간 훼손이 없어도 청소 상태에 따라 일부 공제될 수 있어요.</p>
+            </div>
+        </section>
+
+        <section id="checklist">
+            <h2>현장 답사 때 확인해야 할 7가지</h2>
+            <p>사진과 영상으로는 절대 알 수 없는 디테일이 있어요. 현장에 가면 이 7가지를 반드시 체크하세요. 첫째, 화장실 개수와 위치예요. 여성 참가자가 많을 경우 대기 시간이 이벤트 몰입도를 떨어뜨릴 수 있어요. 둘째, 콘센트 위치와 총 전력 용량이에요. DJ 장비, 조명, 케이터링 장비가 동시에 돌아갈 때 차단기가 내려가면 정말 곤란하죠. 셋째, 와이파이 속도와 안정성이에요. 라이브 스트리밍이나 온라인 등록을 해야 한다면 이건 선택이 아니라 필수예요.</p>
+<p>넷째, 비상구와 대피 경로예요. 법적으로 문제가 없어도 실제 움직임 동선이 막히면 안전에 직결돼요. 다섯째, 주차 가능 대수와 인근 주차장 정보예요. 생각보다 많은 참가자들이 차를 가지고 와서 당황하는 경우가 많아요. 여섯째, 흡연 구역이에요. 지정되지 않은 곳에서 흡연이 발생하면 민원 위험이 커져요. 일곱째, 소음 기준이에요. 망원동은 주거 지역과 상업 지역이 혼재돼 있어서, 시간대별 소음 규제를 반드시 확인해야 해요.</p>
+        </section>
+
+        <section id="timing">
+            <h2>타이밍이 모든 걸 결정합니다</h2>
+            <p>실무자들이 가장 많이 하는 실수 중 하나가 예산만 신경 쓰고 시즌을 놓치는 거예요. 망원 클럽 룩북은 계절에 따라 대관료가 달라져요. 12월과 1월 연말연시 시즌에는 기본 요금이 20~30% 가까이 올라가요. 반대로 7~8월 여름에는 휴가 시즌이라 수요가 낮아져서 협상 여지가 생기고요. 만약 예산이 빡빡하다면 3월이나 9월처럼 비수기와 성수기 사이의 과도기를 노리는 게 현명해요.</p>
+<p>요일 선택도 엄청 중요해요. 금요일 저녁과 토요일은 당연히 가장 비싸고 경쟁도 치열해요. 그런데 목요일 저녁이나 일요일 오후를 선택하면, 같은 공간을 훨씬 더 합리적인 가격에 확보할 수 있어요. 특히 브랜드 론칭 행사나 프라이빗 파티처럼 특정 타겟을 초대하는 이벤트라면, 평일 저녁이 오히려 참석률이 더 높을 수 있어요. 주말에 이미 개인 일정이 있는 사람들보다, 평일 저녁에 시간을 내는 게 더 의지 있는 참가자라는 거죠.</p>
+        </section>
+
+        <footer>
+            <p>© 2025 망원 클럽 룩북 — 실무자를 위한 공간 정보 가이드. 모든 정보는 현장 확인을 권장합니다.</p>
+        </footer>
     </div>
-    <nav>
-      <a href="/">메인</a>
-      <a href="/info" class="active">정보</a>
-      <a href="/crew">크루</a>
-      <a href="/review">리뷰</a>
-      <a href="/contact">연락처</a>
-    </nav>
-  </div>
-</header>
-
-<!-- MAIN CONTENT -->
-<main>
-  <!-- INFO HERO -->
-  <section class="page-section">
-    <div class="container">
-      <div class="hero-block">
-        <h1>INFO<br>아카이브</h1>
-        <p>망원 클럽 룩북은 2025년 서울 망원동의 6개 주요 클럽에서 수집한 스트리트 브루탈리즘 패션 데이터를 체계적으로 아카이빙합니다. 데이터 수집 방법론, 분석 기준, 익명 리뷰 정책을 투명하게 공개합니다.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHODOLOGY STATS -->
-  <section class="page-section">
-    <div class="container">
-      <h2>데이터 개요</h2>
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="number">2,847</div>
-          <div class="label">수집 룩 데이터</div>
-        </div>
-        <div class="stat-card">
-          <div class="number">43</div>
-          <div class="label">활동 크루</div>
-        </div>
-        <div class="stat-card">
-          <div class="number">6</div>
-          <div class="label">모니터링 클럽</div>
-        </div>
-        <div class="stat-card">
-          <div class="number">2025</div>
-          <div class="label">아카이브 연도</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- METHODOLOGY DETAIL -->
-  <section class="page-section">
-    <div class="container">
-      <h2>수집 방법론</h2>
-      <div class="card-block">
-        <div class="info-card">
-          <h4>현장 촬영</h4>
-          <p>금·토요일 심야(23:00~04:00) 망원동 클럽 6개소에서 무작위 샘플링. 플래시 사용 최소화, 얼굴 모자이크 처리 후 데이터베이스 등재.</p>
-          <ul>
-            <li>주간 2회 정기 촬영</li>
-            <li>크루별 최소 50건 확보</li>
-            <li>스타일 태그 분류</li>
-          </ul>
-        </div>
-        <div class="info-card">
-          <h4>크루 인터뷰</h4>
-          <p>사전 동의를 받은 크루 멤버 대상 반구조화 인터뷰. 스타일 철학, 의상 소싱 경로, 클럽 드레스 코드 영향력을 기록.</p>
-          <ul>
-            <li>2025년 3월~8월 진행</li>
-            <li>총 87건 인터뷰</li>
-            <li>모든 개인정보 익명화</li>
-          </ul>
-        </div>
-        <div class="info-card">
-          <h4>데이터 정제</h4>
-          <p>촬영 이미지와 인터뷰 텍스트를 정량·정성 혼합 분석. 12개 카테고리(아우터, 신발, 액세서리 등)로 태깅 후 크루별
 </body>
 </html>
